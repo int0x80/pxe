@@ -1,21 +1,17 @@
+# initrd path is relative to pxe root (/tftpboot)
+# nfsroot ip is pxe server's address
+
 LABEL 21
         MENU LABEL Backtrack 5 R1 x86 KDE
         KERNEL /backtrack/5/R1/x86/kde/casper/vmlinuz
-	    APPEND initrd=/backtrack/5/R1/x86/kde/casper/initrd.gz boot=casper text vga=789 netboot=nfs nfsroot=192.168.1.114:/store/tftpboot/backtrack/5/R1/x86/kde
+	    APPEND initrd=/backtrack/5/R1/x86/kde/casper/initrd.gz boot=casper text vga=789 netboot=nfs nfsroot=192.168.2.134:/tftpboot/backtrack/5/R1/x86/kde
         TEXT HELP
         Boot the Backtrack 5 R1 x86 KDE Live CD
 ENDTEXT
 LABEL 22
         MENU LABEL Backtrack 5 R1 x64 KDE
         KERNEL /backtrack/5/R1/x64/kde/casper/vmlinuz
-	    APPEND initrd=/backtrack/5/R1/x64/kde/casper/initrd.gz boot=casper text vga=789 netboot=nfs nfsroot=192.168.1.114:/store/tftpboot/backtrack/5/R1/x64/kde
+	    APPEND initrd=/backtrack/5/R1/x64/kde/casper/initrd.gz boot=casper text vga=789 netboot=nfs nfsroot=192.168.2.134:/tftpboot/backtrack/5/R1/x64/kde
         TEXT HELP
         Boot the Backtrack 5 R1 x64 KDE Live CD
 ENDTEXT
-#LABEL 22
-#        MENU LABEL Ubuntu 9.10 Alternate i386
-#        KERNEL ubuntu/9.10/i386/vmlinuz
-#        APPEND boot=install root=/store/tftpboot/ubuntu/9.10/i386 initrd=ubuntu/9.10/i386/initrd.gz
-#        TEXT HELP
-#        Boot the Ubuntu 9.10 Alternate CD
-#ENDTEXT
